@@ -1,0 +1,21 @@
+
+<% @todos.each do |todo| %>
+
+    <a href="/todos/<%= todo['id'] %>">
+      <h1><em>- </em><%= todo['name'] %></h1>
+    </a>
+    
+    <h3><em>Beskrivning: </em><%= todo['description'] %></h3> 
+
+    <form class="delete" action="/todos/<%=todo["id"]%>/delete" method="post">
+      <input type="submit" value="Ta bort">
+    </form>  
+  
+    <a href="/todos/<%= todo['id'] %>/edit">
+    <input type="submit" value="Ändra">
+    </a>
+
+  <hr>
+<% end %>
+
+
