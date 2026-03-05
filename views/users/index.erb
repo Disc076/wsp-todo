@@ -1,7 +1,7 @@
-<% @users.each do |users| %> 
+<h2>Ny användare</h2> 
+
 <form action="/users" method="post">
-    <input type="text" name="user_name">
-    <input type="text" name="user_password">
+    Användarnamn: <input type="text" name="user_name">
+    Lösenord: <input type="text" name="user_password">
     <input type="submit">
 </form> 
-<% end %>
