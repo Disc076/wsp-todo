@@ -61,4 +61,11 @@ class App < Sinatra::Base
   get '/users' do 
     erb(:"users/index")
   end
+
+  post '/users' do 
+    f_user_name = params['user_name']
+    f_user_password = params['userpassword'] 
+    db.execute("INSERT INTO users (user_name, user_password) VALUES(?,?)", [f_user_name, f_user_password])
+    redirect('/users')
+  end 
 end
