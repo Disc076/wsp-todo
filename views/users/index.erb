@@ -1,7 +1,6 @@
-<h2>Ny användare</h2> 
-
-<form action="/users" method="post">
-    Användarnamn: <input type="text" name="user_name">
-    Lösenord: <input type="text" name="user_password">
-    <input type="submit">
-</form> 
+<% @users.each do |users| %>
+<a href="/users/<%= user['id'] %>">
+<h1><em>Användarnamn: </em><%= user['user_name'] %></h1>
+</a>
+<h3><em>Lösenord: </em><%= user['user_password'] %></h3> 
+<% end %>

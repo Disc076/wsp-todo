@@ -58,14 +58,18 @@ class App < Sinatra::Base
     redirect("/todos")
   end
 
-  get '/users' do 
+  get '/users/index' do 
     erb(:"users/index")
+  end
+
+  get '/users/new' do 
+    erb(:"users/new")
   end
 
   post '/users' do 
     f_user_name = params['user_name']
     f_user_password = params['userpassword'] 
     db.execute("INSERT INTO users (user_name, user_password) VALUES(?,?)", [f_user_name, f_user_password])
-    redirect('/users')
+    redirect('/todos')
   end 
 end
