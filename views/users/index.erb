@@ -1,6 +1,6 @@
-<% @users.each do |users| %>
-<a href="/users/<%= user['id'] %>">
-<h1><em>Användarnamn: </em><%= user['user_name'] %></h1>
+<% @users.each do |u| %>
+<a href="/users/<%= u['id'] %>">
+<h1><em>Användarnamn: </em><%= u['user_name'] %></h1>
 </a>
-<h3><em>Lösenord: </em><%= user['user_password'] %></h3> 
+<h3><em>Lösenord: </em><%= u['user_password'] %></h3> 
 <% end %>

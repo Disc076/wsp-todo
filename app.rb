@@ -58,7 +58,8 @@ class App < Sinatra::Base
     redirect("/todos")
   end
 
-  get '/users/index' do 
+  get '/users' do 
+    @users = db.execute('SELECT * FROM users')
     erb(:"users/index")
   end
 
